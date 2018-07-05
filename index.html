@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>angularjs</title>
+</head>
+<body>
+        <div ng-controller="myCtr">
+     <style></style>
+  <table border="5" table background="img/698px-Cricket_field_blank.svg.png">
+      <H1><em>CRICKET  LEGENDS</em> <img src="img/international-cricket-council-logo.png" alt="text"/>
+      <tr style=" background-color: royalblue">
+          <th >name</th>
+          <th >Id</th>
+          <th >photo</th>
+          <th >runs</th>
+          <th>cricketboard</th>
+          <th>boardsymbol</th>
+          <th >Remove Player</th>
+
+      </tr>
+        <tr ng-repeat="player in players">
+        <td>{{player.name}}</td>
+          <td>{{player.id}}</td>
+          <td><img ng-src="{{player.photo}}"></td>
+         <td>{{player.runs}}</td>
+         <td>{{player.cricketboard}}</td>
+         <td><img ng-src="{{player.boardsymbol}}"</td>
+         <td ng-click="removePlayer(player)">X</td>                  
+      </tr>
+  </table>
+  <form ng-submit="add()">
+      Name: <input type="text" ng-model="newName"><br>
+      Id: <input type="text" ng-model="newId"><br>
+      Runs: <input type="text" ng-model="newRuns"><br>
+      cricketboard:<input type="text" ng-model="newcricketboard"><br>
+
+      <input type="submit" value="submit"> 
+    
+  </form>
+
+</div>
+        <script src="angular.min.js"></script>
+        <script src="angular-route.js"></script>
+        <script src="app.js"></script> 
+</body>
+</html>
